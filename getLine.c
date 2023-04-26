@@ -130,7 +130,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	if (n == -1 || (n == 0 && leng == 0))
 		return (-1);
 
-	c = _strchr(buf + i, '\n');
+	c = _strchr(buf + k, '\n');
 	i = c ? 1 + (unsigned int)(c - buf) : leng;
 	new_p = _realloc(p, s, s ? s + i : i + 1);
 	if (!new_p) 
