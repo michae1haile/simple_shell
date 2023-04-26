@@ -49,7 +49,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
  */
 ssize_t get_input(info_t *info)
 {
-	static char *buf; /* the ';' command chain buffer */
+	static char *buf; 
 	static size_t k, m, leng;
 	ssize_t n = 0;
 	char **buf_p = &(info->arg), *p;
@@ -64,7 +64,7 @@ ssize_t get_input(info_t *info)
 		p = buf + k;
 
 		check_chain(info, buf, &m, k, leng);
-		while (j < leng)
+		while (m < leng)
 		{
 			if (is_chain(info, buf, &m))
 				break;
@@ -123,7 +123,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	p = *ptr;
 	if (p && length)
 		s = *length;
-	if (k == len)
+	if (k == leng)
 		k = leng = 0;
 
 	n = read_buf(info, buf, &leng);
