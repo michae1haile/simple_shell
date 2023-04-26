@@ -18,7 +18,7 @@ int _envir(info_t *info)
  *
  * Return: the value i
  */
-char *_envirv(info_t *info, const char *name)
+char *_getenvirv(info_t *info, const char *name)
 {
 	list_t *node = info->env;
 	char *i;
@@ -55,7 +55,7 @@ int _envirin(info_t *info)
  * @info: arguments.
  * Return: 0 (success)
  */
-int _envirm(info_t *info)
+int _mysetenv(info_t *info)
 {
 	int i;
 

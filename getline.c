@@ -48,7 +48,7 @@ ssize_t get_buf(info_t *info, char **buf, size_t *l)
  * @info: parameter
  * Return: bytes read
  */
-ssize_t get_lin(info_t *info)
+ssize_t get_line(info_t *info)
 {
 	static char *buf;
 	static size_t i, j, len;

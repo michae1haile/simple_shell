@@ -136,10 +136,10 @@ int _putsfd(char *str, int fd);
 /* toem_string.c */
 int _strlen(char *);
 int _strcmp(char *, char *);
-char *starts_with(const char *, const char *);
+char *check_start(const char *, const char *);
 char *_strcat(char *, char *);
 
-/* toem_string1.c */
+/* toem_string0.c */
 char *_strcpy(char *, char *);
 char *_strdup(const char *);
 void _puts(char *);
@@ -155,8 +155,8 @@ char **strtow(char *, char *);
 char **strtow2(char *, char);
 
 /* toem_realloc.c */
-char *_memset(char *, char, unsigned int);
-void ffree(char **);
+char *_memoset(char *, char, unsigned int);
+void sfree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 
 /* toem_memory.c */
@@ -185,9 +185,9 @@ int _myhistory(info_t *);
 int _myalias(info_t *);
 
 /*toem_getline.c */
-ssize_t get_input(info_t *);
+ssize_t get_line(info_t *);
 int _getline(info_t *, char **, size_t *);
-void sigintHandler(int);
+void sig_Handler(int);
 
 /* toem_getinfo.c */
 void clear_info(info_t *);
@@ -195,23 +195,23 @@ void set_info(info_t *, char **);
 void free_info(info_t *, int);
 
 /* toem_environ.c */
-char *_getenv(info_t *, const char *);
-int _myenv(info_t *);
+char *_getenvirv(info_t *, const char *);
+int _envirin(info_t *);
 int _mysetenv(info_t *);
-int _myunsetenv(info_t *);
-int populate_env_list(info_t *);
+int _envir(info_t *);
+int envirpo_env_list(info_t *);
 
-/* toem_getenv.c */
+/* toem_getenvi.c */
 char **get_environ(info_t *);
-int _unsetenv(info_t *, char *);
+int _rmenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
 
 /* toem_history.c */
-char *get_history_file(info_t *info);
+char *get_hist_file(info_t *info);
 int write_history(info_t *info);
 int read_history(info_t *info);
 int build_history_list(info_t *info, char *buf, int linecount);
-int renumber_history(info_t *info);
+int count_history(info_t *info);
 
 /* toem_lists.c */
 list_t *add_node(list_t **, const char *, int);
@@ -220,7 +220,7 @@ size_t print_list_str(const list_t *);
 int delete_node_at_index(list_t **, unsigned int);
 void free_list(list_t **);
 
-/* toem_lists1.c */
+/* toem_lists0.c */
 size_t list_len(const list_t *);
 char **list_to_strings(list_t *);
 size_t print_list(const list_t *);
