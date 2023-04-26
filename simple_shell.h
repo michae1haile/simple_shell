@@ -1,5 +1,5 @@
-#ifndef _SHELL_H_
-#define _SHELL_H_
+#ifndef _SIMPLE_SHELL_H_
+#define _SIMPLE_SHELL_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -233,12 +233,6 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
-=======
-#define MAX_CMD_LENGTH 1024
->>>>>>> 45b7daa6cd5eed64c6af8b434db499fb7fbdf98e
-=======
-#define MAX_CMD_LENGTH 1024
->>>>>>> 45b7daa6cd5eed64c6af8b434db499fb7fbdf98e
 
 #endif
 
