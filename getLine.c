@@ -1,4 +1,4 @@
-#include "simple_shel.h"
+#include "simple_shell.h"
 /**
  * input_buf - buffers chained commands
  * @info: parameter struct
@@ -41,7 +41,6 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 	}
 	return (n);
 }
-
 /**
  * get_input - gets a line minus the newline
  * @info: parameter struct
@@ -86,7 +85,6 @@ ssize_t get_input(info_t *info)
 	*buf_p = buf; 
 	return (n); 
 }
-
 /**
  * read_buf - reads a buffer
  * @info: parameter struct
@@ -106,7 +104,6 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 		*i = n;
 	return (n);
 }
-
 /**
  * _getline - gets the next line of input from STDIN
  * @info: parameter struct
@@ -153,7 +150,6 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	*ptr = p;
 	return (s);
 }
-
 /**
  * sigintHandler - blocks ctrl-C
  * @sig_num: the signal number

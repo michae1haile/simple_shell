@@ -18,11 +18,10 @@ int _myenv(info_t *info)
  *
  * Return: the value
  */
-<<<<<<< HEAD
+
 char *_getenv(info_t *info, const char *name)
-=======
+
 char *_getenvirv(info_t *info, const char *name)
->>>>>>> d959f4bf5dc2e2c481a5b4443c3560862177b244
 {
 	list_t *node = info->env;
 	char *ptr;
@@ -36,7 +35,6 @@ char *_getenvirv(info_t *info, const char *name)
 	}
 	return (NULL);
 }
-
 /**
  * _mysetenv - Initialize a new environment variable,
  *             or modify an existing one
@@ -55,18 +53,14 @@ int _mysetenv(info_t *info)
 		return (0);
 	return (1);
 }
-
 /**
  * _myunsetenv - Remove an environment variable
  * @info: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
  * Return: Always 0
  */
-<<<<<<< HEAD
 int _myunsetenv(info_t *info)
-=======
 int _mysetenv(info_t *info)
->>>>>>> d959f4bf5dc2e2c481a5b4443c3560862177b244
 {
 	int n;
 
@@ -80,7 +74,6 @@ int _mysetenv(info_t *info)
 
 	return (0);
 }
-
 /**
  * populate_env_list - populates env linked list
  * @info: Structure containing potential arguments. Used to maintain
