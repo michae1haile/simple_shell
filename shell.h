@@ -13,6 +13,7 @@
 #include <errno.h>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* for read/write buffers */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
@@ -232,6 +233,9 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
+=======
+#define MAX_CMD_LENGTH 1024
+>>>>>>> 45b7daa6cd5eed64c6af8b434db499fb7fbdf98e
 =======
 #define MAX_CMD_LENGTH 1024
 >>>>>>> 45b7daa6cd5eed64c6af8b434db499fb7fbdf98e
