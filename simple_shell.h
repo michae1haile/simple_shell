@@ -12,8 +12,6 @@
 #include <fcntl.h>
 #include <errno.h>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 /* for read/write buffers */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
@@ -103,8 +101,8 @@ typedef struct passinfo
 
 /**
  * struct builtin - contains a builtin string and related function
- * @type: the builtin command flag
- * @func: the function
+ * @type: builtin command flag
+ * @func: function
  */
 typedef struct builtin
 {
@@ -113,13 +111,13 @@ typedef struct builtin
 } builtin_table;
 
 
-/* toem_shloop.c */
+/* _shloop.c */
 int hsh(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
-/* toem_parser.c */
+/* _parser.c */
 int is_cmd(info_t *, char *);
 char *dup_chars(char *, int, int);
 char *find_path(info_t *, char *, char *);
@@ -127,60 +125,62 @@ char *find_path(info_t *, char *, char *);
 /* loophsh.c */
 int loophsh(char **);
 
-/* toem_errors.c */
+/* _errors.c */
 void _eputs(char *);
 int _eputchar(char);
 int _putfd(char c, int fd);
 int _putsfd(char *str, int fd);
 
-/* toem_string.c */
+/* _string.c */
 int _strlen(char *);
 int _strcmp(char *, char *);
 char *check_start(const char *, const char *);
 char *_strcat(char *, char *);
 
 /* toem_string0.c */
+/* _string1.c */
 char *_strcpy(char *, char *);
 char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
-/* toem_exits.c */
+/* _exits.c */
 char *_strncpy(char *, char *, int);
 char *_strncat(char *, char *, int);
 char *_strchr(char *, char);
 
-/* toem_tokenizer.c */
+/* _tokenizer.c */
 char **strtow(char *, char *);
 char **strtow2(char *, char);
 
 /* toem_realloc.c */
+/* _realloc.c */
 char *_memoset(char *, char, unsigned int);
 void sfree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 
-/* toem_memory.c */
-int bfree(void **);
+/* _memory.c */
+int bfreed(void **);
 
-/* toem_atoi.c */
+/* _atoi.c */
 int interactive(info_t *);
 int is_delim(char, char *);
 int _isalpha(int);
 int _atoi(char *);
 
-/* toem_errors1.c */
+/* _errors1.c */
 int _erratoi(char *);
 void print_error(info_t *, char *);
 int print_d(int, int);
 char *convert_number(long int, int, int);
 void remove_comments(char *);
 
-/* toem_builtin.c */
+/* _builtin.c */
 int _myexit(info_t *);
 int _mycd(info_t *);
 int _myhelp(info_t *);
 
-/* toem_builtin1.c */
+/* _builtin1.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
 
@@ -189,7 +189,12 @@ ssize_t get_line(info_t *);
 int _getline(info_t *, char **, size_t *);
 void sig_Handler(int);
 
-/* toem_getinfo.c */
+/*_getline.c */
+ssize_t get_input(info_t *);
+int _getline(info_t *, char **, size_t *);
+void sig_handler(int);
+
+/*_getinfo.c */
 void clear_info(info_t *);
 void set_info(info_t *, char **);
 void free_info(info_t *, int);
@@ -207,13 +212,27 @@ int _rmenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
 
 /* toem_history.c */
+
+/* _environ.c */
+char *_envirv(info_t *, const char *);
+int _envir(info_t *);
+int _envirin(info_t *);
+int _envirm(info_t *);
+int envirpo_list(info_t *);
+
+/* _getenv.c */
+char **get_envirr(info_t *);
+int _rmenv(info_t *, char *);
+int _setenv(info_t *, char *, char *);
+
+/* _history.c */
 char *get_hist_file(info_t *info);
 int write_history(info_t *info);
 int read_history(info_t *info);
 int build_history_list(info_t *info, char *buf, int linecount);
 int count_history(info_t *info);
 
-/* toem_lists.c */
+/* _lists.c */
 list_t *add_node(list_t **, const char *, int);
 list_t *add_node_end(list_t **, const char *, int);
 size_t print_list_str(const list_t *);
@@ -221,13 +240,14 @@ int delete_node_at_index(list_t **, unsigned int);
 void free_list(list_t **);
 
 /* toem_lists0.c */
+/* _lists1.c */
 size_t list_len(const list_t *);
 char **list_to_strings(list_t *);
 size_t print_list(const list_t *);
 list_t *node_starts_with(list_t *, char *, char);
 ssize_t get_node_index(list_t *, list_t *);
 
-/* toem_vars.c */
+/* _vars.c */
 int is_chain(info_t *, char *, size_t *);
 void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
