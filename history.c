@@ -1,5 +1,4 @@
 #include "simple_shell.h"
-
 /**
  * get_hist_file - gets file history
  * @info: parameter struct
@@ -49,7 +48,6 @@ int write_history(info_t *info)
 	close(fd);
 	return (1);
 }
-
 /**
  * read_history - reads history from file
  * @info: the parameter struct
@@ -98,7 +96,6 @@ int read_history(info_t *info)
 	renumber_history(info);
 	return (info->histcount);
 }
-
 /**
  * build_history_list - adds entry to a history linked list
  * @info: Structure containing potential arguments. Used to maintain
