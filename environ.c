@@ -1,44 +1,46 @@
-#include "simple_shell.h"
-
+#include <simple_shell.h>
 /**
- * _envir - prints the current environment
- * @info:  constant function prototype.
- * Return: 0(success)
+ * _myenv - prints the current environment
+ * @info: Structure containing potential arguments. Used to maintain
+ *          constant function prototype.
+ * Return: Always 0
  */
-int _envir(info_t *info)
+int _myenv(info_t *info)
 {
 	print_list_str(info->env);
 	return (0);
 }
 
 /**
- * _envirv - function that returns the value of an environ variable
- * @info: arguments.
+ * _getenv - gets the value of an environ variable
+ * @info: Structure containing potential arguments. Used to maintain
  * @name: env var name
  *
- * Return: the value i
+ * Return: the value
  */
-char *_envirv(info_t *info, const char *name)
+char *_getenv(info_t *info, const char *name)
 {
 	list_t *node = info->env;
-	char *i;
+	char *ptr;
 
 	while (node)
 	{
-		i = starts_with(node->str, name);
-		if (i && *i)
-			return (i);
+		ptr = starts_with(node->str, name);
+		if (ptr && *ptr)
+			return (ptr);
 		node = node->next;
 	}
 	return (NULL);
 }
 
 /**
- * _envirin - function that Initialize a new environment variable.
- * @info: arguments.
- *  Return: 0 (success)
+ * _mysetenv - Initialize a new environment variable,
+ *             or modify an existing one
+ * @info: Structure containing potential arguments. Used to maintain
+ *        constant function prototype.
+ *  Return: Always 0
  */
-int _envirin(info_t *info)
+int _mysetenv(info_t *info)
 {
 	if (info->argc != 3)
 	{
@@ -51,37 +53,40 @@ int _envirin(info_t *info)
 }
 
 /**
- * _envirm -function remove an environment variable
- * @info: arguments.
- * Return: 0 (success)
+ * _myunsetenv - Remove an environment variable
+ * @info: Structure containing potential arguments. Used to maintain
+ *        constant function prototype.
+ * Return: Always 0
  */
-int _envirm(info_t *info)
+int _myunsetenv(info_t *info)
 {
-	int i;
+	int n;
 
 	if (info->argc == 1)
 	{
 		_eputs("Too few arguements.\n");
 		return (1);
 	}
-	for (i = 1; i <= info->argc; i++)
-		_unsetenv(info, info->argv[i]);
+	for (n = 1; n <= info->argc; n++)
+		_unsetenv(info, info->argv[n]);
 
 	return (0);
 }
 
 /**
- * envirpo_list - populates env linked list
- * @info: arguments.
- * Return: 0(success)
+ * populate_env_list - populates env linked list
+ * @info: Structure containing potential arguments. Used to maintain
+ *          constant function prototype.
+ * Return: Always 0
  */
-int envirpo_list(info_t *info)
+int populate_env_list(info_t *info)
 {
 	list_t *node = NULL;
-	size_t i;
+	size_t n;
 
-	for (i = 0; environ[i]; i++)
-		add_node_end(&node, environ[i], 0);
+	for (n = 0; environ[n]; n++)
+		add_node_end(&node, environ[n], 0);
 	info->env = node;
 	return (0);
 }
+
