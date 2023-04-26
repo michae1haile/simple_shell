@@ -1,7 +1,5 @@
-#include <stdlib.h>
-#include <unistd.h>
+#include "shell.h"
 
-#define MAX_CMD_LENGTH 1024
 /**
 * main -  shell that reads user input from standard input using the read function and executes commands
 * using the execve function.
@@ -9,10 +7,12 @@
 */
 int main(void)
 {
-	char *cmdline =  malloc(MAX_CMD_LENGTH * sizeof(char));
+	char *cmdline;
 
 	pid_t pid;
 	int status;
+
+	*cmdline = malloc(MAX_CMD_LENGTH * sizeof(char)):
 
 	while (1)
 	{
