@@ -7,12 +7,12 @@
 */
 int main(void)
 {
-	char *cmdline;
+	char *shell
 
 	pid_t pid;
 	int status;
 
-	*cmdline = malloc(MAX_CMD_LENGTH * sizeof(char)):
+	*shell = malloc(MAX_CMD_LENGTH * sizeof(char)):
 
 	while (1)
 	{
@@ -20,7 +20,7 @@ int main(void)
 
 		ssize_t nread;
 
-		nread = read(STDIN_FILENO, cmdline, MAX_CMD_LENGTH);
+		nread = read(STDIN_FILENO, shell, MAX_CMD_LENGTH);
 		if (nread == 0)
 		{
 			write(STDOUT_FILENO, "\n", 1);
@@ -31,9 +31,9 @@ int main(void)
 			perror("read");
 			continue;
 		}
-		if (cmdline[nread - 1] == '\n')
+		if (shell[nread - 1] == '\n')
 		{
-			cmdline[nread - 1] = '\0';
+			shell[nread - 1] = '\0';
 			nread--;
 		}
 		pid = fork();
@@ -44,7 +44,7 @@ int main(void)
 		}
 		if (pid == 0)
 		{
-			if (execve(cmdline, NULL, NULL) < 0)
+			if (execve(shell, NULL, NULL) < 0)
 			{
 				perror("execve");
 				_exit(1);
@@ -55,6 +55,6 @@ int main(void)
 			waitpid(pid, &status, 0);
 		}
 	}
-	free(cmdline);
+	free(shell);
 	return (0);
 }
