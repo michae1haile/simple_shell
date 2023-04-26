@@ -1,11 +1,10 @@
 #include "simple_shell.h"
-
 /**
  * _memoset - fills memory with a constant byte
  * @s: the pointera
  * @b: the byte to fill *s
  * @n: the amount of bytes
- * Return: (s) 
+ * Return:(s) 
  */
 char *_memoset(char *s, char b, unsigned int n)
 {

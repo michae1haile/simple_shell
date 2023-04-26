@@ -4,7 +4,7 @@
  * @ptr: address of the pointer.
  * Return: 1 if freed, otherwise 0.
  */
-int bfreed(void **ptr)
+int bfree(void **ptr)
 {
 	if (ptr && *ptr)
 	{

@@ -76,9 +76,9 @@ size_t print_list(const list_t *j)
 
 /**
  * node_starts_with -prints node whose string starts with prefix
- * @node: pointer to list head
- * @prefix: string 
- * @c: the next character after prefix 
+ * @node:pointer to list head
+ *@prefix:string 
+ * @c:the next character after prefix 
  * Return: match node or null
  */
 list_t *node_starts_with(list_t *node, char *prefix, char c)
@@ -94,7 +94,6 @@ list_t *node_starts_with(list_t *node, char *prefix, char c)
 	}
 	return (NULL);
 }
-
 /**
  * get_node_index - gets the index of a node
  * @head: pointer to list head

@@ -119,12 +119,11 @@ int build_history_list(info_t *info, char *buf, int linecount)
 		info->history = node;
 	return (0);
 }
-
 /**
  * count_history - renumbers the history linked list after changes
- * @info: arguments. 
- * Return: the new histcount
- */
+ *@info:arguments. 
+ * Return:the new histcount
+*/
 int count_history(info_t *info)
 {
 	list_t *node = info->history;

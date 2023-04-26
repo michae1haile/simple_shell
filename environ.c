@@ -18,7 +18,11 @@ int _myenv(info_t *info)
  *
  * Return: the value
  */
+<<<<<<< HEAD
 char *_getenv(info_t *info, const char *name)
+=======
+char *_getenvirv(info_t *info, const char *name)
+>>>>>>> d959f4bf5dc2e2c481a5b4443c3560862177b244
 {
 	list_t *node = info->env;
 	char *ptr;
@@ -58,7 +62,11 @@ int _mysetenv(info_t *info)
  *        constant function prototype.
  * Return: Always 0
  */
+<<<<<<< HEAD
 int _myunsetenv(info_t *info)
+=======
+int _mysetenv(info_t *info)
+>>>>>>> d959f4bf5dc2e2c481a5b4443c3560862177b244
 {
 	int n;
 

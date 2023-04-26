@@ -1,4 +1,4 @@
-#include "simple_hell.h"
+#include "simple_shell.h"
 /**
  * hsh - main shell loop
  * @info: the parameter & return info struct
