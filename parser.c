@@ -1,4 +1,4 @@
-#include "imple_hell.h"
+#include "simple_shell.h"
 /**
  * is_cmd - determines if a file is an executable command
  * @info: the info struct

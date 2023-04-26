@@ -1,8 +1,7 @@
 #include "simple_shell.h"
-
 /**
  **_strncpy - copy a string
- *@dest: the destination string 
+ *@dest:the destination string 
  *@src: the source string
  *@k: the amount of characters to be copied
  *Return: the concatenated string
@@ -29,7 +28,6 @@ char *_strncpy(char *dest, char *src, int k)
 	}
 	return (d);
 }
-
 /**
  **_strncat - concatenates two strings
  *@dest: the first string
@@ -56,7 +54,6 @@ char *_strncat(char *dest, char *src, int k)
 		dest[m] = '\0';
 	return (d);
 }
-
 /**
  **_strchr - locates a character in a string
  *@s: the string 
