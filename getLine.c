@@ -133,11 +133,11 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	c = _strchr(buf + i, '\n');
 	i = c ? 1 + (unsigned int)(c - buf) : leng;
 	new_p = _realloc(p, s, s ? s + i : i + 1);
-	if (!new_p) /* MALLOC FAILURE! */
+	if (!new_p) 
 		return (p ? free(p), -1 : -1);
 
 	if (s)
-		_strncat(new_p, buf + k, i - i);
+		_strncat(new_p, buf + k, i - k);
 	else
 		_strncpy(new_p, buf + k, i - k + 1);
 
