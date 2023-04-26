@@ -30,7 +30,7 @@ char *get_hist_file(info_t *info)
 int write_history(info_t *info)
 {
 	ssize_t fd;
-	char *filename = get_history_file(info);
+	char *filename = get_hist_file(info);
 	list_t *node = NULL;
 
 	if (!filename)
@@ -83,9 +83,9 @@ int read_history(info_t *info)
 		return (free(buff), 0);
 	close(fd);
 	for (n = 0; n < fsize; n++)
-		if (buff[i] == '\n')
+		if (buff[n] == '\n')
 		{
-			buff[i] = 0;
+			buff[n] = 0;
 			build_history_list(info, buff + last, count++);
 			last = n + 1;
 		}
