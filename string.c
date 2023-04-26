@@ -1,20 +1,19 @@
-#include "simple_shell.h"
-
 /**
- * _strlen - returns length of a string
- * @s: the string 
- * Return: (l) length of string
+ * _strlen - returns the length of a string
+ * @s: the string whose length to check
+ *
+ * Return: integer length of string
  */
 int _strlen(char *s)
 {
-	int l = 0;
+	int i = 0;
 
 	if (!s)
 		return (0);
 
 	while (*s++)
-		l++;
-	return (l);
+		i++;
+	return (i);
 }
 
 /**
@@ -22,7 +21,7 @@ int _strlen(char *s)
  * @s1: the first strang
  * @s2: the second strang
  *
- * Return: (-ve) if s1 < s2, (+ve) if s1 > s2, (zero) if s1 == s2
+ * Return: negative if s1 < s2, positive if s1 > s2, zero if s1 == s2
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -40,13 +39,13 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * check_start - checks if needle starts with haystack
+ * starts_with - checks if needle starts with haystack
  * @haystack: string to search
  * @needle: the substring to find
  *
  * Return: address of next char of haystack or NULL
  */
-char *check_start(const char *haystack, const char *needle)
+char *starts_with(const char *haystack, const char *needle)
 {
 	while (*needle)
 		if (*needle++ != *haystack++)
@@ -58,17 +57,18 @@ char *check_start(const char *haystack, const char *needle)
  * _strcat - concatenates two strings
  * @dest: the destination buffer
  * @src: the source buffer
+ *
  * Return: pointer to destination buffer
  */
 char *_strcat(char *dest, char *src)
 {
-	char *d = dest;
+	char *ret = dest;
 
 	while (*dest)
 		dest++;
 	while (*src)
 		*dest++ = *src++;
 	*dest = *src;
-	return (d);
+	return (ret);
 }
 
