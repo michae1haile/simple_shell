@@ -53,6 +53,9 @@ ssize_t get_input(info_t *info)
 	static char *buf; /* the ';' command chain buffer */
 	static size_t i, j, len;
 	ssize_t r = 0;
+       static char *buf; 
+	static size_t k, m, leng;
+	ssize_t n = 0;
 	char **buf_p = &(info->arg), *p;
 
 	_putchar(BUF_FLUSH);
@@ -66,6 +69,8 @@ ssize_t get_input(info_t *info)
 
 		check_chain(info, buf, &j, i, len);
 		while (j < len) /* iterate to semicolon or end */
+		check_chain(info, buf, &m, k, leng);
+		while (m < leng)
 		{
 			if (is_chain(info, buf, &j))
 				break;
@@ -126,6 +131,8 @@ int _getline(info_t *info, char **ptr, size_t *length)
 		s = *length;
 	if (i == len)
 		i = len = 0;
+	if (k == leng)
+		k = leng = 0;
 
 	r = read_buf(info, buf, &len);
 	if (r == -1 || (r == 0 && len == 0))
@@ -139,6 +146,14 @@ int _getline(info_t *info, char **ptr, size_t *length)
 
 	if (s)
 		_strncat(new_p, buf + i, k - i);
+	c = _strchr(buf + k, '\n');
+	i = c ? 1 + (unsigned int)(c - buf) : leng;
+	new_p = _realloc(p, s, s ? s + i : i + 1);
+if (!new_p) 
+		return (p ? free(p), -1 : -1);
+
+	if (s)
+		_strncat(new_p, buf + k, i - k);
 	else
 		_strncpy(new_p, buf + i, k - i + 1);
 
