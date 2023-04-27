@@ -30,9 +30,9 @@ char *_getenv(info_t *info, const char *name)
 	return (NULL);
 }
 /**
-* _mysetenv - Initialize a new environment variable
+* _mysetenv - Initialize a new environment.
  * @info: arguments
- * Return: Always 0
+ * Return: 0(success)
 */
 int _mysetenv(info_t *info)
 {
@@ -52,15 +52,15 @@ int _mysetenv(info_t *info)
 */
 int _myunsetenv(info_t *info)
 {
-	int n;
+	int k;
 
 	if (info->argc == 1)
 	{
 		_eputs("Too few arguements.\n");
 		return (1);
 	}
-	for (n = 1; n <= info->argc; n++)
-		_unsetenv(info, info->argv[n]);
+	for (k = 1; k <= info->argc; k++)
+		_unsetenv(info, info->argv[k]);
 
 	return (0);
 }
@@ -72,11 +72,11 @@ int _myunsetenv(info_t *info)
 int populate_env_list(info_t *info)
 {
 	list_t *node = NULL;
-	size_t n;
+	size_t k;
 
-	for (n = 0; environ[n]; n++)
+	for (k = 0; environ[k]; k++)
 	{
-		add_node_end(&node, environ[n], 0);
+		add_node_end(&node, environ[k], 0);
 	info->env = node;
 	}
 	return (0);
