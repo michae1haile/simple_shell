@@ -1,10 +1,10 @@
 #include "simple_shell.h"
 /**
- * get_history_file - gets the history file
+* get_history_file - gets the history file
  * @info: parameter struct
  *
  * Return: allocated string containg history file
- */
+*/
 
 char *get_history_file(info_t *info)
 {
@@ -23,11 +23,11 @@ char *get_history_file(info_t *info)
 	return (buf);
 }
 /**
- * write_history - creates a file, or appends to an existing file
+* write_history - creates a file, or appends to an existing file
  * @info: the parameter struct
  *
  * Return: 1 on success, else -1
- */
+*/
 int write_history(info_t *info)
 {
 	ssize_t fd;

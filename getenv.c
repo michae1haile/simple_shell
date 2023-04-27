@@ -1,10 +1,10 @@
 #include "simple_shell.h"
 /**
- * get_environ - returns the string array copy of our environ
+* get_environ - returns the string array copy of our environ
  * @info: Structure containing potential arguments. Used to maintain
  *          constant function prototype.
  * Return: Always 0
- */
+*/
 char **get_environ(info_t *info)
 {
 	if (!info->environ || info->env_changed)
@@ -17,12 +17,12 @@ char **get_environ(info_t *info)
 }
 
 /**
- * _unsetenv - Remove an environment variable
+* _unsetenv - Remove an environment variable
  * @info: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
  * Return: 1 on delete, 0 otherwise
  * @var: the string env var property
- */
+*/
 int _unsetenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
@@ -49,12 +49,12 @@ int _unsetenv(info_t *info, char *var)
 }
 
 /**
- * _setenv - Initialize a new environment variable
+* _setenv - Initialize a new environment variable
  * @info: argumntes
  * @var: the string env var property
  * @value: the string env var value
  * Return: Always 0
- */
+*/
 int _setenv(info_t *info, char *var, char *value)
 {
 	char *buf = NULL;
