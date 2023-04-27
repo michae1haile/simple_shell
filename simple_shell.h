@@ -152,11 +152,11 @@ char **strtow2(char *, char);
 
 /*  simple shell_realloc.c */
 char *_memset(char *, char, unsigned int);
-void ffree(char **);
+void ffreed(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 
 /*  simple shell_memory.c */
-int bfree(void **);
+int bfreed(void **);
 
 /*  simple shell_shell_atoi.c */
 int interactive(info_t *);
