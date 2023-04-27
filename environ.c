@@ -1,7 +1,7 @@
 #include "simple_shell.h"
 /**
  * _myenv - prints the current environment
- * @info: arguments
+ *@info: arguments
  * Return: Always 0 
  */
 int _myenv(info_t *info)
@@ -14,7 +14,7 @@ int _myenv(info_t *info)
  * @info: arguments
  * @name: env var name
  * Return: the value
- */
+*/
 char *_getenv(info_t *info, const char *name)
 {
 	list_t *node = info->env;
@@ -30,10 +30,10 @@ char *_getenv(info_t *info, const char *name)
 	return (NULL);
 }
 /**
- * _mysetenv - Initialize a new environment variable
+* _mysetenv - Initialize a new environment variable
  * @info: arguments
  * Return: Always 0
- */
+*/
 int _mysetenv(info_t *info)
 {
 	if (info->argc != 3)
@@ -46,10 +46,10 @@ int _mysetenv(info_t *info)
 	return (1);
 }
 /**
- * _myunsetenv - Remove an environment variable
+* _myunsetenv - Remove an environment variable
  * @info: arguments
  * Return: Always 0
- */
+*/
 int _myunsetenv(info_t *info)
 {
 	int n;
@@ -65,10 +65,10 @@ int _myunsetenv(info_t *info)
 	return (0);
 }
 /**
- * populate_env_list - populates env linked list
- * @info: arguments
+ * populate_env_list - populates env linked list
+ * @info: arguments
  * Return: Always 0
- */
+*/
 int populate_env_list(info_t *info)
 {
 	list_t *node = NULL;
